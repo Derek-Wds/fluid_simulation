@@ -18,16 +18,16 @@ class Fluid {
         this.diff = diffusion;
         this.visc = viscosity;
 
-        this.s = new float[N*N*N];
-        this.density = new float[N*N*N];
+        this.s = new Array(N*N*N);
+        this.density = new Array(N*N*N);
 
-        this.Vx = new float[N*N*N];
-        this.Vy = new float[N*N*N];
-        this.Vz = new float[N*N*N];
+        this.Vx = new Array(N*N*N);
+        this.Vy = new Array(N*N*N);
+        this.Vz = new Array(N*N*N);
 
-        this.Vx0 = new float[N*N*N];
-        this.Vy0 = new float[N*N*N];
-        this.Vz0 = new float[N*N*N];
+        this.Vx0 = new Array(N*N*N);
+        this.Vy0 = new Array(N*N*N);
+        this.Vz0 = new Array(N*N*N);
     }
 
     // step method
