@@ -10,7 +10,7 @@ void lin_solve(int b, float[] x, float[] x0, float a, float c) {
 			for (int i = 1; i < N - 1; i++) {
 				x[IX(i, j)] =
 				(x0[IX(i, j)]
-				+ a*(    x[IX(i+1, j)]
+				+ a*(x[IX(i+1, j)]
 				+x[IX(i-1, j)]
 				+x[IX(i, j+1)]
 				+x[IX(i, j-1)]

@@ -74,14 +74,12 @@ class Fluid {
 	}
 
 	void renderD() {
-		colorMode(HSB, 255);
-
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				float x = i * SCALE;
 				float y = j * SCALE;
 				float d = this.density[IX(i, j)];
-				fill((d + 50) % 255,200,d);
+				fill(d);
 				noStroke();
 				square(x, y, SCALE);
 			}
@@ -98,7 +96,7 @@ class Fluid {
 				stroke(255);
 
 				if (!(abs(vx) < 0.1 && abs(vy) <= 0.1)) {
-				line(x, y, x+vx*SCALE, y+vy*SCALE );
+					line(x, y, x+vx*SCALE, y+vy*SCALE );
 				}
 			}
 		}
