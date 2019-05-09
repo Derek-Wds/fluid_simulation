@@ -1,3 +1,7 @@
+import gifAnimation.*;
+
+GifMaker gifExport;
+
 final int N = 128;
 final int iter = 16;
 final int SCALE = 4;
@@ -10,7 +14,11 @@ void settings() {
 }
 
 void setup() {
-	fluid = new Fluid(0.5, 0, 0.0000001);
+	fluid = new Fluid(0.2, 0, 0.0000001);
+	gifExport = new GifMaker(this, "fluid.gif");
+	gifExport.setRepeat(0); 
+	gifExport.setTransparent(255);
+	gifExport.setDelay(1000/12);
 }
 
 void draw() {
@@ -33,4 +41,7 @@ void draw() {
 
 	fluid.step();
 	fluid.renderD();
+	gifExport.addFrame();
+
+  	if (frameCount == 300) gifExport.finish();  
 }

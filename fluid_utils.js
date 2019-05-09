@@ -41,7 +41,7 @@ function lin_solve(b, x, x0, a, c) {
     Function of project : This operation runs through all the cells and fixes them up so everything is in equilibrium.
     - velocX : float[]
     - velocY : float[]
-    = p : float[]
+    - p : float[]
     - div : float[]
 */
 function project(velocX, velocY, p, div) {
@@ -85,11 +85,11 @@ function advect(b, d, d0, velocX, velocY, dt) {
     let dty = dt * (N - 2);
   
     let s0, s1, t0, t1;
-    let tmp1, tmp2, tmp3, x, y;
+    let tmp1, tmp2, x, y;
   
     let Nfloat = N;
     let ifloat, jfloat;
-    let i, j, k;
+    let i, j;
     
 
     for (j = 1, jfloat = 1; j < N - 1; j++, jfloat++) { 

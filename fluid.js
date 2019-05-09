@@ -5,7 +5,7 @@ let iter = 16;
 let SCALE = 4;
 let t = 0;
 
-// function to use 1D array and fake the extra two dimensions --> 3D
+// function to use 1D array and fake the extra one dimension
 function IX(x, y) {
     return x + y*N;
 }
@@ -26,11 +26,6 @@ class Fluid {
 
         this.Vx0 = new Array(N*N).fill(0);
         this.Vy0 = new Array(N*N).fill(0);
-
-        console.log(this.Vy)
-
-
-        // this.canvas = canvas;
     }
 
     // step method
@@ -95,7 +90,7 @@ class Fluid {
                 let y = j * SCALE;
                 let vx = this.Vx[IX(i, j, k)];
                 let vy = this.Vy[IX(i, j, k)];
-                this.canvas.stroke(0);
+                stroke(0);
         
                 if (!(abs(vx) < 0.1 && abs(vy) <= 0.1)) {
                     line(x, y, x+vx*SCALE, y+vy*SCALE );
